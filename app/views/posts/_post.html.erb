@@ -13,5 +13,10 @@
   <p>
     <%= link_to "", post, class:"post-link" %>
   </p>
+  <div>
+    <% post.images.each do |image| %>
+      <%= image_tag(image, style: "object-fit: cover; width: 200px; height: 400px;") %>
+    <% end %>
+  </div>  
 
 </div>
