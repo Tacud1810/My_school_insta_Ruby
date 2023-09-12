@@ -1,4 +1,6 @@
+<div style="text-align: left">by. <%= post.user.username if post.user %></div>
 <div id="<%= dom_id post %>" class="post-container">
+
   <p>
     <%= post.title %>
   </p>
@@ -18,5 +20,6 @@
       <%= image_tag(image, style: "object-fit: cover; width: 200px; height: 400px;") %>
     <% end %>
   </div>  
+  
 
 </div>
