@@ -1,0 +1,41 @@
+<%= form_with(model: user) do |form| %>
+
+  <div>
+    <% invalid = user.errors.include?(:username) %>
+    <%= form.label :username, style: "display: block" %>
+    <%= form.text_field :username, class:"form-control" %>
+    <% if invalid %>
+      <% user.errors.full_messages_for(:username).each do |error|%>
+      <li style="color: red"><%= error %></li>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div>
+    <% invalid = user.errors.include?(:email) %>
+    <%= form.label :email, style: "display: block" %>
+    <%= form.email_field :email, class:"form-control" %>
+    <% if invalid %>
+      <% user.errors.full_messages_for(:email).each do |error|%>
+      <li style="color: red"><%= error %></li>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div>
+    <% invalid = user.errors.include?(:password) %>
+    <%= form.label :password, style: "display: block" %>
+    <%= form.password_field :password, class:"form-control" %>
+    <% if invalid %>
+      <% user.errors.full_messages_for(:password).each do |error|%>
+      <li style="color: red"><%= error %></li>
+      <% end %>
+    <% end %>
+  </div>
+
+  <br>
+
+  <div>
+    <%= form.submit "Sign up", class:"btn btn-primary col-12" %>
+  </div>
+<% end %>
