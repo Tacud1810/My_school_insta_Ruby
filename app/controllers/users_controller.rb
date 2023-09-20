@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
 
+	def index
+		@users = User.all
+	end
+
 	def new
 		@user = User.new
 	end
@@ -16,8 +20,30 @@ class UsersController < ApplicationController
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
-		
 	end
+
+	def edit
+		@user = User.find(params[:id])
+	end
+
+	def update
+		@user = User.find(params[:id])
+		respond_to do |format|
+      if @user.update(user_params)
+        format.html { redirect_to @user, notice: "#{@user.username} update successfull" }
+        format.json { render :show, status: :created, location: @user }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
+	end
+
+	def show
+		@user = User.find(params[:id])
+		@posts = @user.posts
+	end
+
 
 	private
 		def user_params

@@ -1,0 +1,19 @@
+
+<div id="<%= dom_id user %>" >
+  <p>
+    Username: <%= user.username %>
+  </p>
+
+  <p>
+    User email: <%= user.email %>
+  </p>
+   <p>
+    <%= pluralize(user.posts.count, "post") %> 
+  </p>
+
+</div>
+<div>
+  <%= link_to "View this user", user %> |
+  <%= link_to "Edit this user", edit_user_path(user) %> |
+  <%= link_to "Destroy this user", @user, method: :delete, style:"color: red" %>
+</div>

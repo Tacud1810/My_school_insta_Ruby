@@ -36,6 +36,6 @@
   <br>
 
   <div>
-    <%= form.submit "Sign up", class:"btn btn-primary col-12" %>
+    <%= form.submit(@user.new_record? ? "Sign up" : "Update account", class:"btn btn-primary col-12") %>
   </div>
 <% end %>

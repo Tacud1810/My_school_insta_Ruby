@@ -1,0 +1,22 @@
+<%= form_with(scope: :session, url: login_path) do |form| %>
+
+  <div>
+ 
+    <%= form.label :email, style: "display: block" %>
+    <%= form.email_field :email, class:"form-control" %>
+
+  </div>
+
+  <div>
+
+    <%= form.label :password, style: "display: block" %>
+    <%= form.password_field :password, class:"form-control" %>
+
+  </div>
+
+  <br>
+
+  <div>
+    <%= form.submit "Login", class:"btn btn-primary col-12" %>
+  </div>
+<% end %>

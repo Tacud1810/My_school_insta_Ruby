@@ -1,0 +1,13 @@
+<h1>Login</h1>
+<div style= "color:red">
+<% flash.each do |name, msg |%>
+  <%= msg   %>
+<% end %>
+</div>
+<%= render "form"%>
+
+<br>
+
+<div>
+  You do not have an account? <%= link_to "Sign up", signup_path %> 
+</div>

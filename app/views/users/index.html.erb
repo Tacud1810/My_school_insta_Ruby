@@ -1,0 +1,14 @@
+<%= stylesheet_link_tag("post") %>
+
+<%= render "layouts/messages" %>
+
+<div id="posts">
+  
+    <% @users.each do |user| %>
+    <div class="post-container">
+      <%= render user %>
+        </div>
+    <% end %>
+
+</div>
+

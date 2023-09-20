@@ -1,0 +1,15 @@
+<p style="color: green"><%= notice %></p>
+
+<h1 style="text-align: center"><%= @user.username %>'s profile</h1>
+<%= render @user %>
+<h3 style="text-align: center">
+  Posts
+</h3>
+<div id="posts">
+  <% @posts.each do |post| %>
+    <%= render post %>
+    
+  <% end %>
+</div>
+
+
